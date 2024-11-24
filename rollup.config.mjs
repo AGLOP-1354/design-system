@@ -10,6 +10,7 @@ export default {
       file: 'dist/index.cjs.js',
       format: 'cjs',
       sourcemap: true,
+      exports: 'named',
     },
     {
       file: 'dist/index.esm.js',
@@ -22,12 +23,15 @@ export default {
     commonjs(),
     typescript({
       tsconfig: './tsconfig.json',
+      useTsconfigDeclarationDir: true,
     }),
     postcss({
+      modules: true,
+      extract: false,
       extensions: ['.css'],
     }),
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'framer-motion'],
   onwarn(warning, warn) {
     if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
       return;

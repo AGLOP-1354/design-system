@@ -1,12 +1,12 @@
 {
   "name": "@jake0308/design-system",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup --bundleConfigAsCjs -c"
+    "build": "rollup -c"
   },
   "keywords": [],
   "author": "",
