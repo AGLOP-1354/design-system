@@ -1,27 +1,37 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
+import postcss from 'rollup-plugin-postcss'
 
 export default {
-  input: 'src/index.ts', // 진입 파일
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.cjs.js', // CommonJS 번들 파일
+      file: 'dist/index.cjs.js',
       format: 'cjs',
       sourcemap: true,
     },
     {
-      file: 'dist/index.esm.js', // ESM 번들 파일
+      file: 'dist/index.esm.js',
       format: 'esm',
       sourcemap: true,
     },
   ],
   plugins: [
-    resolve(), // Node.js 모듈 해석
-    commonjs(), // CommonJS -> ESM 변환
+    resolve(),
+    commonjs(),
     typescript({
       tsconfig: './tsconfig.json',
-    }), // TypeScript 지원
+    }),
+    postcss({
+      extensions: ['.css'],
+    }),
   ],
-  external: ['react', 'react-dom'], // 번들에서 제외할 외부 의존성
+  external: ['react', 'react-dom'],
+  onwarn(warning, warn) {
+    if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+      return;
+    }
+    warn(warning);
+  },
 };
