@@ -38,7 +38,7 @@ const getClassNameBySize = (size: string) => {
   }
 };
 
-const Button = ({ type = "primary", onClick, size = "medium", style, className, children }: Props) => {
+export const Button = ({ type = "primary", onClick, size = "medium", style, className, children }: Props) => {
   const classNameByType = getClassNameByType(type);
   const classNameBySize = getClassNameBySize(size);
 
@@ -52,5 +52,3 @@ const Button = ({ type = "primary", onClick, size = "medium", style, className, 
     </button>
   );
 };
-
-export default Button;
