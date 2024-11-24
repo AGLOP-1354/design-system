@@ -4,9 +4,11 @@
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "publish:npm": "rm -rf dist && mkdir dist && tsc"
   },
   "keywords": [],
   "author": "",
