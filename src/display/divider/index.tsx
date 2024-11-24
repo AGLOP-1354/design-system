@@ -9,7 +9,7 @@ type Props = {
   type?: 'horizontal' | 'vertical';
 };
 
-const Divider = ({ color, noMargin, type = 'horizontal' }: Props) => (
+export const Divider = ({ color, noMargin, type = 'horizontal' }: Props) => (
   <div
     className={classNames(classes.Divider, {
       [classes.noMargin]: noMargin,
@@ -18,5 +18,3 @@ const Divider = ({ color, noMargin, type = 'horizontal' }: Props) => (
     style={{ ...(color ? { backgroundColor: color } : {}) }}
   />
 );
-
-export default Divider;

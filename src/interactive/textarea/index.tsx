@@ -14,7 +14,7 @@ type Props = {
   showLength?: boolean;
 };
 
-const Textarea = ({ value, onChange, placeholder, noResize, width, height, showLength, maxLength }: Props) => {
+export const Textarea = ({ value, onChange, placeholder, noResize, width, height, showLength, maxLength }: Props) => {
   const [_value, _setValue] = useState(value);
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,5 +43,3 @@ const Textarea = ({ value, onChange, placeholder, noResize, width, height, showL
     </div>
   );
 };
-
-export default Textarea;

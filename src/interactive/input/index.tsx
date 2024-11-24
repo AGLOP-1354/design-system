@@ -9,7 +9,7 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   placeholder?: string;
 };
 
-const Input = ({ value, onChange, placeholder, prefix, ...acc }: Props) => {
+export const Input = ({ value, onChange, placeholder, prefix, ...acc }: Props) => {
   return (
     <div className={classes.inputContainer}>
       {!!prefix && <span className={classes.prefix}>{prefix}</span>}
@@ -17,5 +17,3 @@ const Input = ({ value, onChange, placeholder, prefix, ...acc }: Props) => {
     </div>
   );
 };
-
-export default Input;

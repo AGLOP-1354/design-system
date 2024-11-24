@@ -29,7 +29,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Drawer = ({ open, title, children }: Props) => {
+export const Drawer = ({ open, title, children }: Props) => {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -58,5 +58,3 @@ const Drawer = ({ open, title, children }: Props) => {
     </motion.div>
   );
 };
-
-export default Drawer;
