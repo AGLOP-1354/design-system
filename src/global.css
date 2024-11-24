@@ -1,0 +1,69 @@
+:root {
+  --primary-100:#0085ff;
+  --primary-200:#69b4ff;
+  --primary-300:#e0ffff;
+  --accent-100:#006fff;
+  --accent-200:#e1ffff;
+  --accent-300:#d946ef;
+  --accent-400:#fae8ff;
+  --text-100:#FFFFFF;
+  --text-200:#9e9e9e;
+  --bg-black: #000000;
+  --bg-100:#1E1E1E;
+  --bg-200:#2d2d2d;
+  --bg-300:#454545;
+  --bg-400:  rgba(0, 0, 0, 0.1);
+  --bg-500: rgba(0, 0, 0, 0.5);
+
+  font-size: 16px;
+  color: var(--text-100);
+  background: var(--bg-100);
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px){
+  :root {
+    font-size: 18px;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+pre {
+  padding: 0 !important;
+}
+
+@supports (width: 100svw) {
+  body {
+    width: 100svw;
+    height: 100vh;
+  }
+}
