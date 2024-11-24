@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "rollup --bundleConfigAsCjs -c"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +22,6 @@
     "classnames": "^2.5.1",
     "framer-motion": "^11.11.17",
     "react": "^18.3.1"
-  }
+  },
+  "type": "module"
 }
