@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "publish:npm": "rm -rf dist && mkdir dist && tsc"
+    "publish:npm": "npm run build && npm publish"
   },
   "keywords": [],
   "author": "",
@@ -32,13 +32,15 @@
     "access": "public"
   },
   "files": [
-    "dist"
+    "dist",
+    "package.json"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   }
 }
