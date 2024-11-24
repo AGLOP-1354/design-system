@@ -21,14 +21,17 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
+    postcss({
+      modules: {
+        generateScopedName: '[name]__[local]___[hash:base64:5]'
+      },
+      inject: true,
+      extract: false,
+      autoModules: true,
+    }),
     typescript({
       tsconfig: './tsconfig.json',
       useTsconfigDeclarationDir: true,
-    }),
-    postcss({
-      modules: true,
-      extract: false,
-      extensions: ['.css'],
     }),
   ],
   external: ['react', 'react-dom', 'framer-motion'],
